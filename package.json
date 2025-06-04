@@ -1,0 +1,21 @@
+{
+  "name": "patient-support-portal",
+  "version": "1.0.0",
+  "description": "A digital portal for patient guidance, integrating AI chatbot support.",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "build": "npm run build --prefix client"
+  },
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
