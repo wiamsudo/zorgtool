@@ -1,5 +1,6 @@
 /* filepath: c:\Users\mateo\OneDrive - Onderwijsgroep Tilburg\Documenten\School\LEEERJAAR3\challenge week\project\client\src\App.css */
 body {
+  background-color: #F4DAC1;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -16,12 +17,10 @@ body {
 
 .sidebar {
   width: 33.33%;
-  background-color: #f0f0f0;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #ccc;
 }
 
 .chat-area {
@@ -31,4 +30,25 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+}
+.menu{
+  background-color: #FFF3E6;
+  border: 4px solid #799875;
+  border-radius: 8px;
+  height: 5vh;
+  width: 95%;
+  margin-bottom: 20px;
+}
+.box{
+  background-color: #FFF3E6;
+  border: 4px solid #799875;
+  border-radius: 8px;
+  height: 85vh;
+  width: 95%;
+}
+.profiel-foto{
+  width: 95%;
+  height: 200px;
+  background-color: #799875;
+
 }

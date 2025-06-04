@@ -6,11 +6,20 @@ function App() {
   return (
     <div className="app-container">
       <div className="sidebar">
-        <p>Sidebar Content</p>
+        <div className="menu"></div>
+        <div className="box">
+          <div className="Profiel-foto">
+            <img
+              src=""
+              alt="Profile"
+            />
+          </div>
+        </div>
         {/* Add more boxes for the 1/3rd section here */}
       </div>
       <div className="chat-area">
         <p>Chatbot Area</p>
+
         {/* We will integrate ChatUI.jsx here later */}
       </div>
     </div>
