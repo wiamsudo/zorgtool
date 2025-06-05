@@ -8,7 +8,6 @@ The Patient Support Portal is an innovative digital platform designed to enhance
 - **Stoplight Method**: Early detection and intervention system that allows patients to communicate their status (Green, Orange, Red) to their therapist.
 - **Therapist Dashboard**: A real-time overview for therapists to manage patient alerts and prioritize responses.
 - **Personalization**: Admins can add patient-specific attachments to enhance AI interactions.
-- **Gamification**: Patients earn coins for engagement, which can be redeemed for rewards.
 
 ## Project Structure
 ```
