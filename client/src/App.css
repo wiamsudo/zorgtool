@@ -86,6 +86,7 @@ p, a{
   align-items: center;
   justify-content: center;
   width: 100%;
+  overflow: scroll
 }
 .post{
   margin: 10px;
