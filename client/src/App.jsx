@@ -8,18 +8,57 @@ function App() {
       <div className="sidebar">
         <div className="menu"></div>
         <div className="box">
-          <div className="Profiel-foto">
-            <img
-              src=""
-              alt="Profile"
-            />
+          <div className="profiel">
+            <div className="profiel-foto"></div>
+            <p>Christa Dohmen</p>
+          </div>
+          <div className="posts-container">
+            <div className="post">
+              <div className="post-header">
+                <div className="profiel-foto-post"></div>
+                <p>Christa Dohmen</p>
+              </div>
+              <a
+                className="download"
+                href="/path/naar/bestand.pdf"
+                download="Samenvatting_24-04.pdf"
+              >
+                <img src="/Upload.png" alt="Download" /> Download Samenvatting 24/04
+              </a>
+            </div>
+            <div className="post">
+              <div className="post-header">
+                <div className="profiel-foto-post"></div>
+                <p>Christa Dohmen</p>
+              </div>
+              <a
+                className="download"
+                href="/path/naar/bestand.pdf"
+                download="Samenvatting_24-04.pdf"
+              >
+                <img src="/Upload.png" alt="Download" /> Download Samenvatting 24/04
+              </a>
+            </div>
+            <div className="post">
+              <div className="post-header">
+                <div className="profiel-foto-post"></div>
+                <p>Christa Dohmen</p>
+              </div>
+              <a
+                className="download"
+                href="/path/naar/bestand.pdf"
+                download="Samenvatting_24-04.pdf"
+              >
+                <img src="/Upload.png" alt="Download" /> Download Samenvatting 24/04
+              </a>
+            </div>
           </div>
         </div>
         {/* Add more boxes for the 1/3rd section here */}
       </div>
       <div className="chat-area">
-        <p>Chatbot Area</p>
-
+        <div className="top"></div>
+        <div className="bottom"></div>
         {/* We will integrate ChatUI.jsx here later */}
       </div>
     </div>
