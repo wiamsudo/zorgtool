@@ -1,6 +1,5 @@
-/* filepath: c:\Users\mateo\OneDrive - Onderwijsgroep Tilburg\Documenten\School\LEEERJAAR3\challenge week\project\client\src\App.css */
 body {
-  background-color: #F4DAC1;
+  background-color: #E0BFA2;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -8,7 +7,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-p, a{
+p,
+a {
   color: #312727;
   text-decoration: none;
 }
@@ -16,6 +16,7 @@ p, a{
   display: flex;
   height: 100vh;
   width: 100vw;
+  position: relative; /* Add this to make app-container the positioning context */
 }
 
 .sidebar {
@@ -33,23 +34,27 @@ p, a{
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  /* position: relative;  Remove this from here */
 }
-.menu{
-  background-color: #FFF3E6;
+
+.menu {
+  background-color: #fff3e6;
   border: 4px solid #799875;
   border-radius: 8px;
   height: 5vh;
   width: 95%;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
-.box{
-  background-color: #FFF3E6;
+.box {
+  background-color: #fff3e6;
   border: 4px solid #799875;
   border-radius: 8px;
   height: 85vh;
-  width: 95%; 
+  width: 95%;
 }
-.profiel{
+.profiel {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +63,7 @@ p, a{
   height: 230px;
   background-color: #799875;
 }
-.profiel-foto{
+.profiel-foto {
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -67,7 +72,7 @@ p, a{
   background-position: center;
   margin-top: 10px;
 }
-.profiel-foto-post{
+.profiel-foto-post {
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -78,7 +83,7 @@ p, a{
 .profiel > p {
   margin-top: 10px;
   font-size: 25px;
-  color: #FFF3E6;
+  color: #fff3e6;
 }
 .posts-container {
   display: flex;
@@ -86,12 +91,12 @@ p, a{
   align-items: center;
   justify-content: center;
   width: 100%;
-  overflow: scroll
+  overflow: scroll;
 }
-.post{
+.post {
   margin: 10px;
   width: 80%;
-  background-color: #F4EAE1;
+  background-color: #f4eae1;
   height: 120px;
   border-radius: 8px;
 }
@@ -102,7 +107,30 @@ p, a{
   align-items: center;
   gap: 10px;
 }
-a.download{
+a.download {
   margin-left: 20px;
 }
-/* Chat area */
+/* Dashboard toggle button */
+.dashboard-toggle-button {
+  padding: 15px;
+  background-color: #799875;
+  color: #fff3e6; 
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 40%;
+  box-sizing: border-box; 
+}
+
+.dashboard-toggle-button:hover {
+  background-color: #5e7a5b; /* Darker green on hover */
+}
+
+.dashboard-toggle-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 2px rgba(121, 152, 117, 0.5); /* Add a subtle focus effect */
+}

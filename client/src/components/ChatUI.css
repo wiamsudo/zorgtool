@@ -1,0 +1,106 @@
+.chat-ui-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill the chat-area */
+  background-color: #fff3e6; /* Match .box background */
+  border: 4px solid #799875; /* Match .box border */
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.messages-area {
+  flex-grow: 1;
+  padding: 15px; /* Increased padding slightly */
+  overflow-y: auto;
+  background-color: #fdfbf7; /* Lighter than container, for contrast */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Added gap between messages */
+}
+
+.message {
+  padding: 10px 15px; /* Adjusted padding */
+  margin-bottom: 0; /* Removed margin-bottom as gap is used in messages-area */
+  border-radius: 18px; /* Slightly more rounded */
+  max-width: 75%; /* Adjusted max-width */
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.message.user {
+  background-color: #799875; /* Main green color from App.css */
+  color: #fff3e6; /* Light text color for contrast */
+  align-self: flex-end;
+  border-bottom-right-radius: 6px; /* Adjusted for new border-radius */
+}
+
+.message.bot {
+  background-color: #f4eae1; /* Match .post background from App.css */
+  color: #312727; /* Main text color from App.css */
+  align-self: flex-start;
+  border-bottom-left-radius: 6px; /* Adjusted for new border-radius */
+}
+
+/* Markdown specific styling for bot messages if needed */
+.message.bot p {
+  margin: 0;
+  color: #312727; /* Ensure p tags inside bot messages also get the color */
+}
+.message.bot a {
+  color: #5e7a5b; /* Darker green for links */
+  text-decoration: underline;
+}
+
+.input-area {
+  display: flex;
+  padding: 15px; /* Increased padding */
+  border-top: 4px solid #799875; /* Match .box border style */
+  background-color: #fff3e6; /* Match container background */
+  gap: 10px; /* Added gap between input and button */
+}
+
+.input-area input {
+  flex-grow: 1;
+  padding: 12px 18px; /* Adjusted padding */
+  border: 2px solid #799875; /* Thinner border, same color */
+  border-radius: 25px; /* More rounded */
+  margin-right: 0; /* Removed margin-right as gap is used */
+  font-size: 1em;
+  color: #312727; /* Text color */
+  background-color: #ffffff; /* White background for input */
+}
+
+.input-area input::placeholder {
+  color: #7a7373; /* Muted placeholder text */
+}
+
+.input-area button {
+  padding: 12px 25px; /* Adjusted padding */
+  background-color: #799875; /* Main green color */
+  color: #fff3e6; /* Light text color */
+  border: none;
+  border-radius: 25px; /* More rounded */
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.input-area button:hover {
+  background-color: #5e7a5b; /* Darker green for hover, from App.css .profiel */
+}
+
+.message.bot.typing-indicator {
+  background-color: #f8f2ed; /* Lighter than bot message */
+  color: #554a4a; /* Muted text color */
+  font-style: italic;
+  align-self: flex-start;
+  border-bottom-left-radius: 6px;
+}
+
+.message.error {
+  background-color: #ffebee; /* Light red for error messages - standard, keep */
+  color: #c62828; /* Darker red text for errors */
+  border: 1px solid #c62828;
+  align-self: flex-start; /* Or center, depending on preference */
+}

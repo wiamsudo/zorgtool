@@ -1,42 +1,37 @@
-// filepath: c:\Users\mateo\OneDrive - Onderwijsgroep Tilburg\Documenten\School\LEEERJAAR3\challenge week\project\server\src\server.js
-import express from 'express';
-import cors from 'cors';
-import AIService from './services/AIService.js'; // Note the .js extension
+import express from "express";
+import cors from "cors";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Initialize AI Service (replace with your actual API URL if needed)
-const aiService = new AIService('http://localhost:5000/api'); // Example URL
-
-// Routes
-app.get('/', (req, res) => {
-  res.send('Patient Support Portal Server is running!');
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({
+  model: "gemini-2.5-flash-preview-05-20",
 });
 
-// Example Chat Endpoint
-app.post('/api/chat', async (req, res) => {
-  const { message, patientId } = req.body;
-
-  if (!message) {
-    return res.status(400).json({ error: 'Message is required' });
-  }
+app.post("/api/chat", async (req, res) => {
+  const { message } = req.body;
+  if (!message) return res.status(400).json({ error: "Message is required" });
 
   try {
-    // Here you would integrate with AIService
-    // For now, just echoing back or sending a placeholder
-    // const aiReply = await aiService.sendMessage(message);
-    // res.json({ reply: aiReply });
-
-    console.log(`Received message: "${message}" from patientId: ${patientId || 'N/A'}`);
-    res.json({ reply: `Server received: "${message}". AI response placeholder.` });
+    const chat = model.startChat({ history: [] });
+    const result = await chat.sendMessage(message);
+    const geminiResponse = result.response;
+    const text = geminiResponse.text();
+    res.json({ reply: text });
   } catch (error) {
-    console.error('Error in /api/chat:', error);
-    res.status(500).json({ error: 'Failed to process chat message' });
+    console.error("Gemini API error:", error);
+    res
+      .status(500)
+      .json({ error: "Failed to process chat message with AI service." });
   }
 });
 

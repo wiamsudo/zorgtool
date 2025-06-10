@@ -1,22 +1,15 @@
 // filepath: c:\Users\mateo\OneDrive - Onderwijsgroep Tilburg\Documenten\School\LEEERJAAR3\challenge week\project\client\src\index.jsx
 import React from "react";
-import ReactDOM from "react-dom"; // For React 17
-// For React 18: import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client"; // Changed import
 import App from "./App";
-import "./App.css"; // Global styles or App specific styles
+import "./App.css"; // Or your global CSS file
 
-// For React 17:
-ReactDOM.render(
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement); // Create a root.
+
+root.render(
+  // Render the app using the new root.
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
-
-// For React 18:
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
